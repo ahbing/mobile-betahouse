@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>betahouse</title>
+    <meta name="viewport" />
+    <!-- <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0" name="viewport" /> -->
+    <!--iphone设备中的safari私有meta标签，它表示：允许全屏模式浏览-->
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <!--iphone的私有标签，它指定的iphone中safari顶端的状态条的样式-->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <!--告诉设备忽略将页面中的数字识别为电话号码-->
+    <meta content="telephone=no" name="format-detection" />
+  </head>
+  <body>
+    <nav>
+      <span>
+        <a href="http://zhizhi.betahouse.us">知之</a>
+        <a href="http://xingzhi.betahouse.us">行之</a>
+        <a class="about-us" href="/members.html"></a>
+      </span>
+    </nav>
+    <div id="container" class="sliderBox">
+      <div id="scroller" >
+        <section class="header">
+          <div class="unflod-btn"></div>
+        </section>
+        <section class="we-creat">
+          <h3>WE CREATE THINGS</h3>
+          <div class="c-box">
+            <div class="c-img-box">
+              <ul id="createList">
+                <li class="c-img-item"></li>
+                <li class="c-img-item"></li>
+                <li class="c-img-item"></li>
+              </ul>
+            </div>
+            <div class="c-img-btn">
+              <button class="prev-img"></button>
+              <button class="next-img"></button>
+            </div>
+          </div>
+          <div class="unflod-btn"></div>
+        </section>
+        <section class="video-box">
+          <div data-src="video1.mp4" class="video-img"></div>
+          <div data-src="betahouse.mp4" class="video-img"></div>
+          <div class="video"></div>
+        </section>
+      </div>
+    </div>
+    <script src="http://localhost:8080/webpack-dev-server.js"></script>
+    <script src="bundle.js"></script>
+  </body>
+</html>

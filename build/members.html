@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>betahouse</title>
+    <meta name="viewport" />
+    <!-- <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0" name="viewport" /> -->
+    <!--iphone设备中的safari私有meta标签，它表示：允许全屏模式浏览-->
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <!--iphone的私有标签，它指定的iphone中safari顶端的状态条的样式-->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <!--告诉设备忽略将页面中的数字识别为电话号码-->
+    <meta content="telephone=no" name="format-detection" />
+
+  </head>
+  <body>
+    <div id="container">
+      <section class="member-box">
+        <a class="back-btn" href="/"></a>
+        <h6>betahouse是一个有趣、有料、有胆的工作室</h6>
+        <p class="connect">联系我们</p>
+        <button>成员介绍</button>
+        <div class="member-list">
+          <div>
+            <ul id="memberBox">
+            </ul>
+          </div>
+        </div>
+
+        <div id="viewport">
+          <div id="wrapper">
+            <ul id="scroller">
+              <!-- <li class="slide"></li>-->
+            </ul>
+            <div id="intro">
+              <p class="intro-name"></p>
+              <p class="intro-text"></p>
+              <p class="intro-link">
+                <a class="github" href="#"></a>
+                <a class="blog" href="#"></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="http://localhost:8080/webpack-dev-server.js"></script>
+    <script src="bundle.js"></script>
+  </body>
+</html>
