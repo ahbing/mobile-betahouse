@@ -258,6 +258,8 @@ nav{
     @include center-top(290);
   }
   .connect{
+    display: block;
+    color: #000;
     @include px2px('width',76);
     @include px2px('height',18);
     @include center-top(344);
@@ -333,14 +335,15 @@ nav{
     @include px2px('height',800);
   }
   #intro{
-    @include center-top(600);
+    position: absolute;
+    left: 0;right: 0;
+    margin:0 auto;
+    @include px2px('top',600);
     @include px2px('width',560);
     @include px2px('min-height',160);
     @include px2px('padding',20);
-    background: linear-gradient(45deg,black,white);
+    background: linear-gradient(45deg,#eaeaea,#fff);
     z-index: 2333333;
-    color: #fff;
-    // opacity: 1;
     letter-spacing: 2px;
     .intro-name{
       @include px2px('padding-top',20);

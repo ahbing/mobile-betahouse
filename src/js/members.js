@@ -1,3 +1,5 @@
+import './../main.scss';   // sass 文件入口
+import './init.js';     //屏幕初始化
 import {loaderImg} from './base.js';
 import IScroll from './iscroll.js';  // iscroll
 import members from './../mock/members.js';
@@ -13,16 +15,14 @@ let loaderMem = function(){
 		introName = introBox.querySelector('.intro-name'),
 		introText = introBox.querySelector('.intro-text'),
 		introLink = introBox.querySelector('.intro-link');
-
 		//所有members的滑动实例
-	  let membersScroll = new IScroll('.member-list',{
+		let membersScroll = new IScroll('.member-list',{
 			scrollX: false,
 			scrollY: true,
 			momentum: false,
 			snap: true,
 			click:true
 		});
-
 		// memebers detail 的滑动实例
 		let detailScroll = new IScroll('#wrapper', {
 			scrollX: false,
@@ -34,7 +34,6 @@ let loaderMem = function(){
 			click:true
 		});
 
-		document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 
 	/*
 	* showIntro 显示相应id的用户数据
@@ -112,7 +111,7 @@ let loaderMem = function(){
 	//  显示 详情的 页面
 	let memberDetail = (e)=>{
 		e.preventDefault();
-		let imgHeight = 800,
+		let imgHeight = 800/2*dpr,
 		 	target = e.target.parentNode,
 	    userId = Number(target.getAttribute('data-i')),
 		  curSrc = target.getAttribute('data-src');
@@ -135,6 +134,11 @@ let loaderMem = function(){
 			detailScroll.scrollTo(0, startTop);
 		},false);
 
+		mDetailBox.addEventListener('touchmove',function(e){
+			e.preventDefault();
+			introBox.style.display = 'none';
+		},false);
+
 		mDetailBox.addEventListener('touchend',function(e){
 			e.preventDefault();
 			detailScroll.scrollBy(0, 0);
@@ -145,6 +149,7 @@ let loaderMem = function(){
 				let theId = Math.abs(parseInt(Number(endTop/imgHeight),10));
 				// console.log(theId);
 				// 添加下一张图片的模糊
+				introBox.style.display = 'block';
 				nextFilter(mDetailScroll,theId,'css-filter');
 				//  清除当前id的css模糊
 				crearFilter(mDetailScroll,theId,'css-filter','cur-header');
@@ -159,7 +164,7 @@ let loaderMem = function(){
 	/*
 	* createMemberList 创建用户list的函数
 	* @param {array}   资源数据数组
-	* @param {string}  要dom添加到的盒子
+	* @param {object}  要dom添加到的盒子
 	* @Param {string}  创建的list item 的classname
 	 */
 	let createMemberList = (arr,box,classname)=>{
@@ -209,7 +214,12 @@ let loaderMem = function(){
 			mDetailBox.style.zIndex=-233;
 		},false);
 	}
+	//
+
+	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 
 };
-
-export default loaderMem;
+// build
+loaderMem();
+// dev
+// export default loaderMem;

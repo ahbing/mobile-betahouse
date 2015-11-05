@@ -8,9 +8,8 @@ var config = {
     path.resolve(__dirname,'src/main.js')
   ],
   output:{
-    path:path.resolve(__dirname,'build'),
+    path:path.resolve(__dirname,'dev'),
     filename:'bundle.js',
-    // vendors:[path.resolve(__dirname,'src/js/iscroll.js')]  // 第三方类库
   },
   module:{
     loaders:[
@@ -18,12 +17,9 @@ var config = {
       {test:/\.css$/,loader:'style!css'},
       {test:/\.scss$/,loader:'style!css!sass'},
       {test:/\.(jpe?g|png|gif|svg&)/i,loader:'url?limit=25000'},
-      {test:/\.mp4$/,loader:'file-loader'},
+      {test:/\.mp4$/,loader:'file-loader'}
     ]
   }
-  // plugins: [
-	// 	new webpack.optimize.CommonsChunkPlugin('vendors','vendors.js')
-	// ]
 }
 
 module.exports = config

@@ -1,15 +1,14 @@
+import './../main.scss';    // sass 文件入口
+import './init.js';     //屏幕初始化
 import {loaderImg,loaderVideo} from './base.js';
 import IScroll from './iscroll.js';  // iscroll
-
 
 function loaderIndex(){
 		// we create things img
 		let createImgs = ['create1.jpg','create2.jpg','create3.jpg'];
-
 		let IndexScreen, // index主页的垂直滚动
 			  createImg;  // create 板块的横向滚动
 		  	// videoSrc;  // 视频的src
-
 		let header = document.querySelector('.header'),
 				nav = document.querySelector('nav'),
 				unflodBtn = document.querySelectorAll('.unflod-btn'),
@@ -26,7 +25,8 @@ function loaderIndex(){
 			scrollX: false,
 			scrollY: true,
 			momentum: false,
-			snap: true
+			snap: true,
+			click:true
 		});
 
 		createImg = new IScroll('.c-img-box',{
@@ -69,9 +69,9 @@ function loaderIndex(){
 			 }
 			 loaderImg(createBoxs[willIndex],require(`./../img/${src}`),'create-img-item');
 			};
-
+			let leftWidth = 484/2*dpr;
 			let createTransform = (willIndex)=>{
-				createList.style.transform = 'translateX('+willIndex*-484+'px)';
+				createList.style.transform = 'translateX(-'+willIndex*leftWidth+'px)';
 				createList.style.transition = 'all .5s ease-in .1s'
 			}
 
@@ -108,7 +108,7 @@ function loaderIndex(){
 			};
 
 
-			let ImgW = 484;
+			let ImgW = 484/2*dpr;
 			createList.style.width = ImgW * createImgs.length+'px';
 			createImgs.forEach((item,index)=>{
 					createBoxs[index].style.width = ImgW+'px';
@@ -161,9 +161,11 @@ function loaderIndex(){
 			};
 
 			[].slice.call(videoImgs).forEach((item)=>{
-				item.addEventListener('touchend',playVideo,false)
+				item.addEventListener('click',playVideo,false)
 			});
 		}
 }
-
-export default loaderIndex;
+// build
+loaderIndex()
+// dev
+// export default loaderIndex;
