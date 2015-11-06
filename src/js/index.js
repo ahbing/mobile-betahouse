@@ -135,6 +135,9 @@ function loaderIndex(){
 				let videoSrc = e.target.getAttribute('data-src');
 				video.style.display = 'block';
 				nav.style.display ='none';
+				let closeBtn = document.createElement('button');
+				closeBtn.classList.add('closeBtn');
+				video.appendChild(closeBtn);
 				loaderVideo(video,require(`./../video/${videoSrc}`),'all-screen',require('./../img/create1.jpg'));
 
 				// 清空监听
@@ -142,13 +145,16 @@ function loaderIndex(){
 					item.removeEventListener('click',playVideo,false)
 				});
 
-				video.addEventListener('touchend',()=>{
+				closeBtn.addEventListener('touchend',()=>{
 					let mTop = video.getBoundingClientRect().top;
 					if(mTop>=0){
 						video.style.display='none';
 						nav.style.display ='block';
 					}
-					if(video && video.firstElementChild){
+					console.log(video.children);
+					console.log(video);
+					if(video && video.children){
+						video.removeChild(video.firstElementChild);
 						video.removeChild(video.firstElementChild);
 					}
 					video.style.display='none';
@@ -166,6 +172,6 @@ function loaderIndex(){
 		}
 }
 // build
-loaderIndex()
+// loaderIndex()
 // dev
-// export default loaderIndex;
+export default loaderIndex;

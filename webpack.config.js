@@ -8,7 +8,7 @@ var config = {
     path.resolve(__dirname,'src/main.js')
   ],
   output:{
-    path:path.resolve(__dirname,'dev'),
+    path:path.resolve(__dirname,'build'),
     filename:'bundle.js',
   },
   module:{

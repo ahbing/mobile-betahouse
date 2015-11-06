@@ -1,11 +1,9 @@
-/*
-开发时的入口文件
- */
-// import './main.scss';   // sass 文件入口
-// import './js/init.js';     //屏幕初始化
 
-// import loaderIndex from './js/index.js';    // 首页js
-// import loaderMem from './js/members.js';  // 成员js
+function hideLoadingState(){
+  let loading = document.querySelector('.loading');
+  loading.style.display='none';
+}
+
 function getLoader() {
     let pathname = window.location.pathname;
     let url = location.href;
@@ -16,10 +14,12 @@ function getLoader() {
     }
     if (window.location.pathname === '/'||window.location.pathname === '/index.html') {
       require.ensure([], function() {
+        hideLoadingState();
         require('./js/index.js')();
       });
     } else if (window.location.pathname === '/members.html') {
       require.ensure([], function() {
+        hideLoadingState();
         require('./js/members.js')();
       });
     }

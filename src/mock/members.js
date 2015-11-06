@@ -15,7 +15,6 @@ let members = [
 	{"id":"14","name":"任丰烨","classtype":"5","professional":"","intro":"","imgsrc":"daniel.jpg","github":"#","blog":"#"},
 	{"id":"15","name":"王鑫泽","classtype":"5","professional":"","intro":"","imgsrc":"daniel.jpg","github":"#","blog":"#"},
 	{"id":"16","name":"徐成超","classtype":"5","professional":"","intro":"","imgsrc":"daniel.jpg","github":"#","blog":"#"},
-	{"id":"17","name":"沈浙湘","classtype":"5","professional":"","intro":"","imgsrc":"daniel.jpg","github":"#","blog":"#"},
 	{"id":"18","name":"陈茜","classtype":"3","professional":"","intro":"","imgsrc":"daniel.jpg","github":"#","blog":"#"},
 	{"id":"19","name":"陈显烽","classtype":"3","professional":"","intro":"","imgsrc":"daniel.jpg","github":"#","blog":"#"},
 	{"id":"20","name":"李晓菲","classtype":"3","professional":"","intro":"","imgsrc":"daniel.jpg","github":"#","blog":"#"},

@@ -11,8 +11,10 @@ body{
 	height: $wh;
 	background: $bgcolor;
   font-family:Helvetica;
+  position: relative;
   @include px2px('font-size',32);
 }
+
 a{
 	font-weight: blod;
 	color: #fff;
@@ -30,7 +32,7 @@ nav{
     position: fixed;
     @include px2px(top,76);
     display: inline-block;
-    z-index: 23333333333333;
+    z-index: 233333333;
     width: $wh;
     @include px2px('line-height',40);
     @include clearfix;
@@ -85,7 +87,7 @@ nav{
 	}
 }
 .we-creat{
-	background: url(./img/Bitmap.png) no-repeat left top;
+	background: url(./img/bg2.jpg) no-repeat left top;
 	background-size: cover;
 }
 .we-creat>h3,
@@ -163,7 +165,7 @@ nav{
 }
 
 .video-box{
-	background: url(./img/Bitmap2.png) no-repeat left top;
+	background: url(./img/bg3.jpg) no-repeat left top;
 	background-size: cover;
 }
 
@@ -213,6 +215,25 @@ nav{
 	height: 100%;
 	overflow: hidden;
   display: none;
+  >button{
+    position: absolute;
+    z-index: 2333333;
+    @include px2px('right',40);
+    @include px2px('bottom',40);
+    @include px2px('width',60);
+    @include px2px('height',60);
+    border-radius: 100%;
+    border: 4px solid #fff;
+    background:rgba(0,0,0,.5);
+  }
+  >button:after{
+    display:inline-block;
+    content: '+';
+    @include px2px('line-height',20);
+    transform: rotate(45deg);
+    @include px2px('font-size',40);
+    color: #fff;
+  }
 }
 .video-play{
 	width: 100%;

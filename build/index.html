@@ -12,8 +12,61 @@
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
     <!--告诉设备忽略将页面中的数字识别为电话号码-->
     <meta content="telephone=no" name="format-detection" />
+    <style>
+    html,body{
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+    .loading{
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      z-index: 23333333333333;
+      width:100%;
+      height: 100%;
+      background: #2d2d2d;
+    }
+    .loading>div{
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      background: #fff;
+      border-radius: 100%;
+      position: absolute;
+      left: 0;right: 0;top: 0;bottom: 0;
+      margin: auto;
+      animation: ball-scale .4s 0s ease-in-out infinite;
+    }
+    .loading>div:first-child{
+      animation: ball-scale .4s .3s ease-in-out infinite;
+      left: -200px;
+    }
+    .loading>div:last-child{
+      animation: ball-scale .4s .9s ease-in-out infinite;
+      left: 200px;
+    }
+    @keyframes ball-scale{
+      0%{
+        opacity: .2;
+        width: 60px;
+        height: 60px;
+      }
+      100%{
+        opacity: .8;
+        width: 80px;
+        height: 80px;
+      }
+    }
+    </style>
   </head>
   <body>
+    <div class="loading">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
     <nav>
       <span>
         <a href="http://zhizhi.betahouse.us">知之</a>
@@ -50,7 +103,8 @@
         </section>
       </div>
     </div>
+    <!-- <script src="http://localhost:8080/webpack-dev-server.js"></script> -->
     <script src="init.js"></script>
-    <script src="index.js"></script>
+    <script src="bundle.js"></script>
   </body>
 </html>

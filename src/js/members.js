@@ -220,6 +220,6 @@ let loaderMem = function(){
 
 };
 // build
-loaderMem();
+// loaderMem();
 // dev
-// export default loaderMem;
+export default loaderMem;

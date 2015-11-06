@@ -3,8 +3,7 @@ var path = require('path'),
 	node_modules_dir = path.resolve(__dirname,'node_modules')
 var config = {
 	entry:{
-		index:path.resolve(__dirname,'src/js/index.js'),
-		members:path.resolve(__dirname,'src/js/members.js')
+		bundle:path.resolve(__dirname,'src/main.js')
 	},
 	output:{
 		path:path.resolve(__dirname,'build'),

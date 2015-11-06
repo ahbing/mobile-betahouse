@@ -2,8 +2,6 @@
 
 ####build
 
-clone
-
 ```
 git clone https://github.com/ahbing/mobile-betahouse.git
 
@@ -12,3 +10,8 @@ npm install
 npm run dev
 
 ```
+
+
+####todo
+
+img lazyload
